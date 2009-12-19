@@ -106,11 +106,16 @@ void StartPanic(EventLoopTimerRef theTimer, void* userData)
     HIRect              rectHI;
     int                 panicWidth,panicHeight;
     HIViewRef           panicImageView,panicWinView;
+    long                systemVersion;
     struct panicData *  panic = (struct panicData*)userData;
     
     /* load panic image */
+    Gestalt(gestaltSystemVersion, &systemVersion);
     appBundle  = CFBundleGetMainBundle();
-    url        = CFBundleCopyResourceURL(appBundle,CFSTR("panic"),CFSTR("png"),NULL);
+    if (systemVersion >= 0x1060) 
+        url    = CFBundleCopyResourceURL(appBundle,CFSTR("panic10.6"),CFSTR("png"),NULL);
+    else
+        url    = CFBundleCopyResourceURL(appBundle,CFSTR("panic"),CFSTR("png"),NULL);
     panicImage = LoadPNGFromURL(url);
     CFRelease(url);
     

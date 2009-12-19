@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		281915310BE37C3E00F02744 /* panic.png in Resources */ = {isa = PBXBuildFile; fileRef = 281915300BE37C3E00F02744 /* panic.png */; };
 		289B0E160BE37B4500CA39C6 /* iPanic.icns in Resources */ = {isa = PBXBuildFile; fileRef = 289B0E150BE37B4500CA39C6 /* iPanic.icns */; };
+		28E65EB510DCF6DF00718D39 /* panic10.6.png in Resources */ = {isa = PBXBuildFile; fileRef = 28E65EB410DCF6DF00718D39 /* panic10.6.png */; };
 		8D0C4E8D0486CD37000505A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */; };
 		8D0C4E900486CD37000505A6 /* ipanic.c in Sources */ = {isa = PBXBuildFile; fileRef = 20286C2BFDCF999611CA2CEA /* ipanic.c */; settings = {ATTRIBUTES = (); }; };
 		8D0C4E920486CD37000505A6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20286C33FDCF999611CA2CEA /* Carbon.framework */; };
@@ -20,6 +21,7 @@
 		20286C33FDCF999611CA2CEA /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		281915300BE37C3E00F02744 /* panic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panic.png; sourceTree = "<group>"; };
 		289B0E150BE37B4500CA39C6 /* iPanic.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iPanic.icns; sourceTree = "<group>"; };
+		28E65EB410DCF6DF00718D39 /* panic10.6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panic10.6.png; sourceTree = "<group>"; };
 		4A9504C8FFE6A3BC11CA0CBA /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		4A9504CAFFE6A41611CA0CBA /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		8D0C4E960486CD37000505A6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				281915300BE37C3E00F02744 /* panic.png */,
+				28E65EB410DCF6DF00718D39 /* panic10.6.png */,
 				289B0E150BE37B4500CA39C6 /* iPanic.icns */,
 				8D0C4E960486CD37000505A6 /* Info.plist */,
 				0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */,
@@ -132,6 +135,7 @@
 				8D0C4E8D0486CD37000505A6 /* InfoPlist.strings in Resources */,
 				289B0E160BE37B4500CA39C6 /* iPanic.icns in Resources */,
 				281915310BE37C3E00F02744 /* panic.png in Resources */,
+				28E65EB510DCF6DF00718D39 /* panic10.6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
