@@ -40,11 +40,22 @@ int main(int argc, char ** argv)
     system("screencapture -mxtpng /tmp/screenshot.png");
     url     = CFURLCreateWithString(NULL,CFSTR("file:///tmp/screenshot.png"),NULL);
     bgImage = LoadPNGFromURL(url);
-    CFRelease(url);
     
     /* calculate coordinates */
-    panic.screenW         = CGImageGetWidth(bgImage);
-    panic.screenH         = CGImageGetHeight(bgImage);
+    CGImageSourceRef imageSource = CGImageSourceCreateWithURL(url, NULL);
+    CFRelease(url);
+    CFDictionaryRef imageProps = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, NULL);
+    CFRelease(imageSource);
+    SInt32 dpi = 72;
+    if (imageProps != nil) {
+        CFNumberRef dpiValue = (CFNumberRef)CFDictionaryGetValue(imageProps, kCGImagePropertyDPIWidth);
+        if (dpiValue != NULL) {
+            CFNumberGetValue(dpiValue, kCFNumberSInt32Type, &dpi);
+        }
+        CFRelease(imageProps);
+    }
+    panic.screenW         = CGImageGetWidth(bgImage) / (dpi / 72);
+    panic.screenH         = CGImageGetHeight(bgImage) / (dpi / 72);
     winRect.top           = 0;
     winRect.bottom        = panic.screenH;
     winRect.left          = 0;
@@ -59,6 +70,7 @@ int main(int argc, char ** argv)
                     kWindowNoShadowAttribute|kWindowNoTitleBarAttribute|kWindowCompositingAttribute,
                     &winRect,&bgWindow);
     HIImageViewCreate(bgImage,&bgImageView);
+    HIImageViewSetScaleToFit(bgImageView, true);
     HIViewFindByID(HIViewGetRoot(bgWindow), kHIViewWindowContentID, &bgWinView);
     HIViewAddSubview(bgWinView,bgImageView);
     HIViewSetFrame(bgImageView,&winRectHI);
