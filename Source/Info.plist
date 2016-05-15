@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>iPanic.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.namedfork.iPanic</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
